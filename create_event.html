@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Создать мероприятие{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="mb-4">Создать новое мероприятие</h1>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Название мероприятия</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Описание</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="start_time" class="form-label">Дата и время начала</label>
+                    <input type="datetime-local" class="form-control" id="start_time" name="start_time" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="end_time" class="form-label">Дата и время окончания</label>
+                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Место проведения</label>
+                <input type="text" class="form-control" id="location" name="location">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="background-color: #C6AC8F; border-color: #C6AC8F;">Создать мероприятие</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

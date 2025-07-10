@@ -1,0 +1,30 @@
+<div class="card event-card" style="background-color: #836B62;">
+    <div class="event-header" style="display: flex; justify-content: space-between;">
+        <h3>{{ event.title }}</h3>
+        <span class="event-status" style="background: var(--accent-green); padding: 3px 10px; border-radius: 12px; font-size: 12px;">
+            Активно
+        </span>
+    </div>
+
+    <div class="event-meta" style="margin: 15px 0; color: #666;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <i class="far fa-calendar-alt"></i>
+            <span>{{ event.start_time.strftime('%d.%m.%Y %H:%M') }} - {{ event.end_time.strftime('%H:%M') }}</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{{ event.location }}</span>
+        </div>
+    </div>
+
+    <p>{{ event.description }}</p>
+
+    <div class="event-actions" style="display: flex; gap: 10px; margin-top: 20px;">
+        <a href="{{ url_for('event_ical', event_id=event.id) }}" class="btn" style="background: var(--dark-gray);">
+            Скачать .ics
+        </a>
+        <a href="{{ url_for('event_details', event_id=event.id) }}" class="btn">
+            Подробнее
+        </a>
+    </div>
+</div>
